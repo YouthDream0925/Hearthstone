@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E74D6F3-4EED-4654-8BAD-2B3AD255AA4D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hearthstone</RootNamespace>
+    <AssemblyName>Hearthstone</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44346</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdvanceUIController.cs" />
+    <Compile Include="Controllers\AppsController.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\BaseUIController.cs" />
+    <Compile Include="Controllers\ChartsController.cs" />
+    <Compile Include="Controllers\CRMController.cs" />
+    <Compile Include="Controllers\CryptoController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\EcommerceController.cs" />
+    <Compile Include="Controllers\FormsController.cs" />
+    <Compile Include="Controllers\IconsController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\JobController.cs" />
+    <Compile Include="Controllers\InvoicesController.cs" />
+    <Compile Include="Controllers\LandingController.cs" />
+    <Compile Include="Controllers\LayoutsController.cs" />
+    <Compile Include="Controllers\MapsController.cs" />
+    <Compile Include="Controllers\NFTMarketplaceController.cs" />
+    <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\SupportTicketsController.cs" />
+    <Compile Include="Controllers\TablesController.cs" />
+    <Compile Include="Controllers\TasksController.cs" />
+    <Compile Include="Controllers\WidgetsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HSModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HSModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HSModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HSModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HSModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Property.cs">
+      <DependentUpon>HSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Resident.cs">
+      <DependentUpon>HSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\HSModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>HSModel.Context.cs</LastGenOutput>
+      <DependentUpon>HSModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\HSModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HSModel.edmx</DependentUpon>
+      <LastGenOutput>HSModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Ecommerce\checkout.cshtml" />
+    <Content Include="Views\Ecommerce\customers.cshtml" />
+    <Content Include="Views\Ecommerce\orders.cshtml" />
+    <Content Include="Views\Ecommerce\products.cshtml" />
+    <Content Include="Views\Forms\advanced.cshtml" />
+    <Content Include="Views\Forms\editors.cshtml" />
+    <Content Include="Views\Forms\validation.cshtml" />
+    <Content Include="Views\Forms\wizard.cshtml" />
+    <Content Include="Views\Icons\boxicons.cshtml" />
+    <Content Include="Views\Icons\materialdesign.cshtml" />
+    <Content Include="Views\Maps\google.cshtml" />
+    <Content Include="Views\Maps\leaflet.cshtml" />
+    <Content Include="Views\Maps\vector.cshtml" />
+    <Content Include="Views\Pages\comingsoon.cshtml" />
+    <Content Include="Views\Pages\faqs.cshtml" />
+    <Content Include="Views\Pages\maintenance.cshtml" />
+    <Content Include="Views\Pages\pricing.cshtml" />
+    <Content Include="Views\Pages\starter.cshtml" />
+    <Content Include="Views\Pages\timeline.cshtml" />
+    <Content Include="Views\Shared\_footer.cshtml" />
+    <Content Include="Views\Shared\_head_css.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_page_title.cshtml" />
+    <Content Include="Views\Shared\_sidebar.cshtml" />
+    <Content Include="Views\Shared\_title_meta.cshtml" />
+    <Content Include="Views\Shared\_topbar.cshtml" />
+    <Content Include="Views\Shared\_vendor_scripts.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\HSModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HSModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\HSModel.edmx.diagram">
+      <DependentUpon>HSModel.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Views\AdvanceUI\Animation.cshtml" />
+    <Content Include="Views\AdvanceUI\Highlight.cshtml" />
+    <Content Include="Views\AdvanceUI\NestableList.cshtml" />
+    <Content Include="Views\AdvanceUI\Ratings.cshtml" />
+    <Content Include="Views\AdvanceUI\Scrollbar.cshtml" />
+    <Content Include="Views\AdvanceUI\ScrollSpy.cshtml" />
+    <Content Include="Views\AdvanceUI\SweetAlerts.cshtml" />
+    <Content Include="Views\AdvanceUI\SwiperSlider.cshtml" />
+    <Content Include="Views\AdvanceUI\Tour.cshtml" />
+    <Content Include="Views\Apps\BasicAction.cshtml" />
+    <Content Include="Views\Apps\Calendar.cshtml" />
+    <Content Include="Views\Apps\Chat.cshtml" />
+    <Content Include="Views\Apps\EcommerceAction.cshtml" />
+    <Content Include="Views\Apps\FileManager.cshtml" />
+    <Content Include="Views\Apps\Mailbox.cshtml" />
+    <Content Include="Views\Apps\Todo.cshtml" />
+    <Content Include="Views\Authentication\Errors404Alt.cshtml" />
+    <Content Include="Views\Authentication\Errors404Basic.cshtml" />
+    <Content Include="Views\Authentication\Errors404Cover.cshtml" />
+    <Content Include="Views\Authentication\Errors500 - Copy.cshtml" />
+    <Content Include="Views\Authentication\LockScreenBasic.cshtml" />
+    <Content Include="Views\Authentication\LockScreenCover.cshtml" />
+    <Content Include="Views\Authentication\LogoutBasic.cshtml" />
+    <Content Include="Views\Authentication\LogoutCover.cshtml" />
+    <Content Include="Views\Authentication\Offline.cshtml" />
+    <Content Include="Views\Authentication\PasswordChangeBasic.cshtml" />
+    <Content Include="Views\Authentication\PasswordChangeCover.cshtml" />
+    <Content Include="Views\Authentication\PasswordResetBasic.cshtml" />
+    <Content Include="Views\Authentication\PasswordResetCover.cshtml" />
+    <Content Include="Views\Authentication\SignInBasic.cshtml" />
+    <Content Include="Views\Authentication\SignInCover.cshtml" />
+    <Content Include="Views\Authentication\SignUpBasic.cshtml" />
+    <Content Include="Views\Authentication\SignUpCover.cshtml" />
+    <Content Include="Views\Authentication\SuccessMessageBasic.cshtml" />
+    <Content Include="Views\Authentication\SuccessMessageCover.cshtml" />
+    <Content Include="Views\Authentication\TwoStepVerificationBasic.cshtml" />
+    <Content Include="Views\Authentication\TwoStepVerificationCover.cshtml" />
+    <Content Include="Views\BaseUI\AccordionCollapse.cshtml" />
+    <Content Include="Views\BaseUI\Alerts.cshtml" />
+    <Content Include="Views\BaseUI\Badges.cshtml" />
+    <Content Include="Views\BaseUI\Buttons.cshtml" />
+    <Content Include="Views\BaseUI\Cards.cshtml" />
+    <Content Include="Views\BaseUI\Carousel.cshtml" />
+    <Content Include="Views\BaseUI\Colors.cshtml" />
+    <Content Include="Views\BaseUI\Dropdowns.cshtml" />
+    <Content Include="Views\BaseUI\EmbedVideo.cshtml" />
+    <Content Include="Views\BaseUI\General.cshtml" />
+    <Content Include="Views\BaseUI\Grid.cshtml" />
+    <Content Include="Views\BaseUI\Images.cshtml" />
+    <Content Include="Views\BaseUI\Lists.cshtml" />
+    <Content Include="Views\BaseUI\Mediaobject.cshtml" />
+    <Content Include="Views\BaseUI\Modals.cshtml" />
+    <Content Include="Views\BaseUI\Notifications.cshtml" />
+    <Content Include="Views\BaseUI\Offcanvas.cshtml" />
+    <Content Include="Views\BaseUI\Placeholders.cshtml" />
+    <Content Include="Views\BaseUI\Progress.cshtml" />
+    <Content Include="Views\BaseUI\Ribbons.cshtml" />
+    <Content Include="Views\BaseUI\Tabs.cshtml" />
+    <Content Include="Views\BaseUI\Typography.cshtml" />
+    <Content Include="Views\BaseUI\Utilities.cshtml" />
+    <Content Include="Views\Charts\ApexchartArea.cshtml" />
+    <Content Include="Views\Charts\ApexchartBar.cshtml" />
+    <Content Include="Views\Charts\ApexchartBoxplot.cshtml" />
+    <Content Include="Views\Charts\ApexchartBubble.cshtml" />
+    <Content Include="Views\Charts\ApexchartCandlstick.cshtml" />
+    <Content Include="Views\Charts\ApexchartColumn.cshtml" />
+    <Content Include="Views\Charts\ApexchartHeatmap.cshtml" />
+    <Content Include="Views\Charts\ApexchartLine.cshtml" />
+    <Content Include="Views\Charts\ApexchartMixed.cshtml" />
+    <Content Include="Views\Charts\ApexchartPie.cshtml" />
+    <Content Include="Views\Charts\ApexchartPolarArea.cshtml" />
+    <Content Include="Views\Charts\ApexchartRadar.cshtml" />
+    <Content Include="Views\Charts\ApexchartRadialbar.cshtml" />
+    <Content Include="Views\Charts\ApexchartScatter.cshtml" />
+    <Content Include="Views\Charts\ApexchartTimeline.cshtml" />
+    <Content Include="Views\Charts\ApexchartTreemap.cshtml" />
+    <Content Include="Views\Charts\Chartjs.cshtml" />
+    <Content Include="Views\Charts\Echarts.cshtml" />
+    <Content Include="Views\CRM\Companies.cshtml" />
+    <Content Include="Views\CRM\Contacts.cshtml" />
+    <Content Include="Views\CRM\Deals.cshtml" />
+    <Content Include="Views\CRM\Leads.cshtml" />
+    <Content Include="Views\Crypto\BuySell.cshtml" />
+    <Content Include="Views\Crypto\ICOList.cshtml" />
+    <Content Include="Views\Crypto\KYCApplication.cshtml" />
+    <Content Include="Views\Crypto\MyWallet.cshtml" />
+    <Content Include="Views\Crypto\Orders.cshtml" />
+    <Content Include="Views\Crypto\Transactions.cshtml" />
+    <Content Include="Views\Dashboard\Analytics.cshtml" />
+    <Content Include="Views\Dashboard\CRM.cshtml" />
+    <Content Include="Views\Dashboard\Crypto.cshtml" />
+    <Content Include="Views\Dashboard\NFT.cshtml" />
+    <Content Include="Views\Dashboard\Projects.cshtml" />
+    <Content Include="Views\Ecommerce\CreateProduct.cshtml" />
+    <Content Include="Views\Ecommerce\OrderDetails.cshtml" />
+    <Content Include="Views\Ecommerce\ProductDetails.cshtml" />
+    <Content Include="Views\Ecommerce\SellerDetails.cshtml" />
+    <Content Include="Views\Ecommerce\Sellers.cshtml" />
+    <Content Include="Views\Ecommerce\ShoppingCart.cshtml" />
+    <Content Include="Views\Forms\BasicElements.cshtml" />
+    <Content Include="Views\Forms\CheckboxsRadios.cshtml" />
+    <Content Include="Views\Forms\FileUploads.cshtml" />
+    <Content Include="Views\Forms\FormLayouts.cshtml" />
+    <Content Include="Views\Forms\FormSelect.cshtml" />
+    <Content Include="Views\Forms\InputMasks.cshtml" />
+    <Content Include="Views\Forms\Pickers.cshtml" />
+    <Content Include="Views\Forms\RangeSlider.cshtml" />
+    <Content Include="Views\Forms\Select2.cshtml" />
+    <Content Include="Views\Icons\CryptoSVG.cshtml" />
+    <Content Include="Views\Icons\Feather.cshtml" />
+    <Content Include="Views\Icons\LineAwesome.cshtml" />
+    <Content Include="Views\Icons\Remix.cshtml" />
+    <Content Include="Views\Invoices\CreateInvoice.cshtml" />
+    <Content Include="Views\Invoices\Details.cshtml" />
+    <Content Include="Views\Invoices\ListView.cshtml" />
+    <Content Include="Views\Landing\Index.cshtml" />
+    <Content Include="Views\Landing\NFTLanding.cshtml" />
+    <Content Include="Views\Layouts\Detached.cshtml" />
+    <Content Include="Views\Layouts\Horizontal.cshtml" />
+    <Content Include="Views\Layouts\Hovered.cshtml" />
+    <Content Include="Views\Layouts\TwoColumn.cshtml" />
+    <Content Include="Views\NFTMarketplace\Collections.cshtml" />
+    <Content Include="Views\NFTMarketplace\CreateNFT.cshtml" />
+    <Content Include="Views\NFTMarketplace\Creators.cshtml" />
+    <Content Include="Views\NFTMarketplace\ExploreNow.cshtml" />
+    <Content Include="Views\NFTMarketplace\ItemDetails.cshtml" />
+    <Content Include="Views\NFTMarketplace\LiveAuction.cshtml" />
+    <Content Include="Views\NFTMarketplace\Marketplace.cshtml" />
+    <Content Include="Views\NFTMarketplace\Ranking.cshtml" />
+    <Content Include="Views\NFTMarketplace\WalletConnect.cshtml" />
+    <Content Include="Views\Pages\Gallery.cshtml" />
+    <Content Include="Views\Pages\ProfileSettings.cshtml" />
+    <Content Include="Views\Pages\ProfileSimple.cshtml" />
+    <Content Include="Views\Pages\SearchResults.cshtml" />
+    <Content Include="Views\Pages\Sitemap.cshtml" />
+    <Content Include="Views\Pages\Team.cshtml" />
+    <Content Include="Views\Projects\CreateProject.cshtml" />
+    <Content Include="Views\Projects\List.cshtml" />
+    <Content Include="Views\Projects\Overview.cshtml" />
+    <Content Include="Views\Shared\_customizer.cshtml" />
+    <Content Include="Views\Shared\_menu.cshtml" />
+    <Content Include="Views\SupportTickets\ListView.cshtml" />
+    <Content Include="Views\SupportTickets\TicketDetails.cshtml" />
+    <Content Include="Views\Tables\BasicTables.cshtml" />
+    <Content Include="Views\Tables\Datatables.cshtml" />
+    <Content Include="Views\Tables\GridJs.cshtml" />
+    <Content Include="Views\Tables\ListJs.cshtml" />
+    <Content Include="Views\Tasks\KanbanBoard.cshtml" />
+    <Content Include="Views\Tasks\ListView.cshtml" />
+    <Content Include="Views\Tasks\TaskDetails.cshtml" />
+    <Content Include="Views\Widgets\Index.cshtml" />
+    <Content Include="Views\Job\Application.cshtml" />
+    <Content Include="Views\Job\CompaniesList.cshtml" />
+    <Content Include="Views\Job\Grid.cshtml" />
+    <Content Include="Views\Job\GridView.cshtml" />
+    <Content Include="Views\Job\JobCategories.cshtml" />
+    <Content Include="Views\Job\List.cshtml" />
+    <Content Include="Views\Job\ListView.cshtml" />
+    <Content Include="Views\Job\NewJob.cshtml" />
+    <Content Include="Views\Job\Overview.cshtml" />
+    <Content Include="Views\Job\Statistics.cshtml" />
+    <Content Include="Views\Member\Properties.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61161</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44346/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
